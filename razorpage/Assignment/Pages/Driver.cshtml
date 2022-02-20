@@ -1,0 +1,40 @@
+@page
+@model DriverModel
+@{
+    ViewData["Title"] = "Driver page";
+}
+
+<h1>Driver Sign-In</h1>
+<div class="container">
+    <div class="col-6">
+        <form method="post">
+            <div class="form-group">
+                <label asp-for="Driver.firstName" class="control-label"></label>
+                <input asp-for="Driver.firstName" class="form-control" />
+                <span asp-validation-for="Driver.firstName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Driver.lastName" class="control-label"></label>
+                <input asp-for="Driver.lastName" class="form-control" />
+                <span asp-validation-for="Driver.lastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Driver.carMake" class="control-label"></label>
+                <input asp-for="Driver.carMake" class="form-control" />
+                <span asp-validation-for="Driver.carMake" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Driver.carModel" class="control-label"></label>
+                <input asp-for="Driver.carModel" class="form-control" />
+                <span asp-validation-for="Driver.carModel" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Submit" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
